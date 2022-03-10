@@ -2,6 +2,7 @@
 // -------- Javascript Page -------- \\
 // --------------------------------- \\
 
+
 const searchBtn = document.querySelector('#user-form');
 const results = document.querySelector('#result-content');
 
