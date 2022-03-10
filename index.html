@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/f5f4ff2f36.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Adventure App</title>
@@ -24,13 +28,49 @@
     </header>
     <hr>
 
+    <!-- Dropdown List of States -->
     <div class="main">
+        <h2>Get Out n Go!</h2>
+        <div class ="dropdown">
+            <h2>Search by State Here --></h2>
+            <select id="state" class="search-bar">
+            </select>
+            <div>
+                <button type="submit" class="btn">Search</button>
+            </div>
+        </div>
+    </div>
+    <div id="result-content"></div>
+
+
+
+    <!-- Original typing-input element -->
+<!--      <div class="main">
         <h2>Let's Find The Nearest Park</h2>
         <form id="user-form" class="search-bar">
             <input name="City" id="search-city" type="text" autofocus="true" placeholder="Search Parks By State" />
             <button type="submit" class="btn">Search</button>
         </form>
+    </div>  -->
+
+
+    <div class="park-details">
+        <button type="button" class="btn park-close-btn" id="park-close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- park content// description will go here  -->
+        <div class="park-details-content">
+            <h2 class="park-title">Park Name Will Go Here</h2>
+            <p class="park-location">Location will go here</p>
+            <div class="park-img">
+                <img src="https://www.pikpng.com/pngl/m/342-3429465_popular-categories-yellowstone-park-sign-png-clipart.png"
+                    alt="National Park">
+            </div>
+        </div>
+
     </div>
+
     <div id="result-content"></div>
     
     <!-- Making 3 display cards -->
@@ -63,6 +103,10 @@
           </div>
         </div>
       </div>
+
+
+
+    <div id="result-content"></div> 
 
 
 
