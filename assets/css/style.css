@@ -13,6 +13,13 @@ body{
     color: #fff;
     height: 92vh;
 }
+:root{
+    --w: #fff;
+    --r: red;
+    --teen: #d65100;
+    --tiny: #b54507;
+
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -86,6 +93,75 @@ nav ul li a{
     border-radius: 2rem;
 }
 
+/* park details  */
+.park-details{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--w);
+    background: var(--teen);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+}
+.park-details::-webkit-scrollbar{
+width: 10px;
+}
+.park-details::-webkit-scrollbar-thumb{
+    background: var(--w);
+    border-radius: 2rem;
+}
+
+/* js class */
+.showParkDetails{
+    display: block;
+}
+.park-details-content{
+    margin: 2rem;
+}
+.park-details-content p:not(.park-location){
+    padding: 1rem 0;
+}
+.park-close-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background:var(--w);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .9;
+}
+.park-title{
+    letter-spacing: 1px;
+    padding: 1rem;
+    text-align: center;
+}
+.park-location{
+    background: var(--w);
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--teen);
+    border-radius: .3rem;
+}.park-location p{
+    text-align: center;
+}
+.park-img img{
+    width: 500px;
+    height: 500px;
+    margin: 15px auto;
+    display: block;
+}
 
 
 
