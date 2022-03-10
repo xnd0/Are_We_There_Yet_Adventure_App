@@ -19,6 +19,18 @@ header{
     align-items: center;
     padding: 1.6rem;
 }
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h4 {    
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
 nav ul{
     display: flex;
 }
@@ -63,7 +75,7 @@ nav ul li a{
 .main h2{
     line-height: 18rem;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     color: rgb(58, 56, 56);
 }
 .btn{
