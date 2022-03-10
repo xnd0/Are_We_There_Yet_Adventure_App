@@ -39,6 +39,12 @@ nav ul li a{
     margin: 0;
 }
 
+.dropdown {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .search-bar{
     display: flex;
     justify-content: center;
