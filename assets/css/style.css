@@ -68,12 +68,10 @@ nav ul li a{
     border-radius: 2rem;
 }
 
-
-
-
-
-
-
-
-
+.card{
+ margin-top: 15rem;
+ bottom: 2rem;
+ margin-left:4rem;
+ margin-right: 4rem;
+}
 
