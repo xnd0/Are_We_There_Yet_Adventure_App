@@ -79,13 +79,11 @@ for (var i = 0; i < usStates.length; i++) {
 }
 //----End of Dropdown Picker Menu----//
 
-
 //----search button----//
 searchBtn.addEventListener('click', statePark);
 
 function statePark(e) {
     e.preventDefault();
-
 
     var searchInputVal = document.querySelector('#state').value;
     console.log(searchInputVal)
@@ -93,9 +91,7 @@ function statePark(e) {
         console.error('You need to search for a city!')
         return;
     }
-
     searchApi(searchInputVal);
-
 }
 //----End of search button----//
 
@@ -127,28 +123,29 @@ function renderResults(parkList) {
     // console.log(parkList[5].states);                                                                
     // console.log(parkList[5].contacts);
 
+//----created var to make object into elements---///
     var resultCard = document.createElement('div');
     resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
 
     var resultBody = document.createElement('div');
     resultBody.classList.add('card-body');
     resultCard.append(resultBody);
-
+//----Name of park----//
     var titleEl = document.createElement('h2');
     titleEl.textContent = parkList.fullName;
-
+//----Latitude and Longitude of park----//
     var bodyContentEl = document.createElement('p');
     bodyContentEl.innerHTML =
         '<strong>Latitude:</strong> ' + parkList.latitude + ' ' + '<strong>Longitude:</strong> ' + parkList.longitude + '<br/>';
-
+//----Phone number of park----//
     var parkNumber = document.createElement('p');
     parkNumber.innerHTML +=
         '<strong>Park Number: </strong> ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
-
+//----Cost of entry fee to park----//
     var parkCost = document.createElement('p');
     parkCost.innerHTML +=
         '<strong>Park Cost: </strong>' + parkList.entranceFees[0].cost + '<br/>'
-
+//----Breif park description----//
     if (parkList.description) {
         bodyContentEl.innerHTML +=
             '<strong>Description:</strong> ' + parkList.description;
@@ -162,11 +159,10 @@ function renderResults(parkList) {
     linkButtonEl.setAttribute('href', parkList.url);
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
-
+//----appending all the attributes to page tab----//
     resultBody.append(titleEl, parkNumber, parkCost, bodyContentEl, linkButtonEl);
-
+//---appending result card----//
     resultContentEl.append(resultCard);
-
 
 
 }
