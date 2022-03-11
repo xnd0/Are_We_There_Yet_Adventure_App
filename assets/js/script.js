@@ -6,7 +6,11 @@
 const searchBtn = document.querySelector('#user-form');
 const results = document.querySelector('#result-content');
 
+// default map location
 var map = L.map('map').setView([51.505, -0.09], 13);
+// Los Angeles Latitude + Longitude
+// var map = L.map('map').setView([34.052, -118.244], 13);
+
 
 // Dropdown Picker Menu  >
 var usStates = [
@@ -78,17 +82,14 @@ for (var i = 0; i<usStates.length; i++){
     var select = document.getElementById("state");
     select.appendChild(option);
 }
-
 //  < End Dropdown Picker Menu
 
-function getMapApi () {
-    varRequestMap = tes
-}
+
+
 
 
 function statePark(e) {
     e.preventDefault();
-
 
     var searchInputVal = document.querySelector('#search-city').value;
 
@@ -96,9 +97,7 @@ function statePark(e) {
         console.error('You need to search for a city!')
         return;
     }
-
     searchApi(searchInputVal);
-
 }
 
 function searchApi(state) {
@@ -108,8 +107,19 @@ function searchApi(state) {
         .then(data => {
             console.log(data);
         })
-
 }
+
+
+// Connects to MapBox tile
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/satellite-v9',
+    // id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoieG5kY21kIiwiYSI6ImNsMGxvdnF4aTB5OWMzYmw0bzRxZWEwaDQifQ.0OevUWqcsyWAe5gbtCUPvQ'
+}).addTo(map);
 
 
 
