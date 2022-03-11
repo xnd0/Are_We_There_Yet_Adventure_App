@@ -232,7 +232,12 @@ function renderResults(parkList) {
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
 
-    resultBody.append(titleEl, bodyContentEl, linkButtonEl);
+    var linkSaveButton = document.createElement('b');
+    linkSaveButton.textContent = 'Save to Favorites'
+    linkSaveButton.setAttribute('data-location', parkList.fullName);
+    linkSaveButton.classList.add('btn', 'btn-dark');
+
+    resultBody.append(titleEl, bodyContentEl, linkButtonEl, linkSaveButton);
 
     resultContentEl.append(resultCard);
 
@@ -243,6 +248,23 @@ function renderResults(parkList) {
 
 
 }
+
+var favoriteLocations = [];
+
+
+resultContentEl.addEventListener('click',function(event){
+    console.log(event.target)
+
+    var favLocation = event.target.getAttribute("data-location");
+    console.log(favLocation)
+
+    favoriteLocations.push(favLocation)
+
+    console.log("log this: " + favoriteLocations);
+
+    localStorage.setItem("myPlaces", JSON.stringify(favoriteLocations));
+
+})
 
 
 
