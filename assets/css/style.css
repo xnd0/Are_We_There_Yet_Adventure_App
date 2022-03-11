@@ -7,11 +7,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+html:not(embeded){
+    background-color: #0a1016;
+}
 body{
     list-style: none;
     background: #444;
     color: #fff;
     height: 92vh;
+}
+hr{
+    margin: 0;
+    border: 2px solid var(--tiny);
 }
 :root{
     --w: #fff;
@@ -24,10 +31,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.6rem;
+    padding: .6rem;
+    background: #0a1016;
+}
+header h2 i{
+    padding-right: 12px;
 }
 
-h3 {
+h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +51,7 @@ h4 {
 
 nav ul{
     display: flex;
+    align-items: center;
 }
 nav ul li{
     align-items: flex-end;
@@ -49,11 +61,17 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.2rem;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: var(--w);
 }
 .main{
     width: 100%;
-    background: url(https://source.unsplash.com/2200x1100/?nature);
+    /* this lopps thru a random pic every time the brower gets refreshed */
+    /* background: url(https://source.unsplash.com/2200x1100/?dark); */ 
+    background-image: url(https://images.unsplash.com/photo-1460355976672-71c3f0a4bdac?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1100&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGFya3x8fHx8fDE2NDY5NzE5MTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=2200);
     min-height: 100%;
     margin: 0;
 }
@@ -63,6 +81,17 @@ nav ul li a{
     justify-content: center;
     align-items: center;
 }
+select#state {
+    padding: 2rem;
+    border-radius: 22%;
+}
+blockquote {
+    margin: 0 0 1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  
 
 .search-bar{
     display: flex;
@@ -80,10 +109,11 @@ nav ul li a{
     text-align: center;
 }
 .main h2{
-    line-height: 18rem;
+    line-height: 13rem;
+    font-style: italic;
     text-align: center;
     font-size: 3rem;
-    color: rgb(58, 56, 56);
+    color: var(--w);
 }
 .btn{
     font-size: 2rem;
@@ -94,10 +124,8 @@ nav ul li a{
 }
 
 .card{
- margin-top: 15rem;
+ margin: 4rem;
  bottom: 2rem;
- margin-left:4rem;
- margin-right: 4rem;
 }
 
 /* park details  */
@@ -169,7 +197,6 @@ width: 10px;
     margin: 15px auto;
     display: block;
 }
-
 
 
 
