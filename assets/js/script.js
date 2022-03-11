@@ -6,6 +6,7 @@
 const searchBtn = document.querySelector('#user-form');
 const results = document.querySelector('#result-content');
 
+var map = L.map('map').setView([51.505, -0.09], 13);
 
 // Dropdown Picker Menu  >
 var usStates = [
@@ -70,7 +71,7 @@ var usStates = [
     { name: 'WYOMING', abbreviation: 'WY' }
 ];
 
-for(var i = 0;i<usStates.length;i++){
+for (var i = 0; i<usStates.length; i++){
     var option = document.createElement("option");
     option.text = usStates[i].name+' ['+usStates[i].abbreviation+']';
     option.value = i;
@@ -80,6 +81,9 @@ for(var i = 0;i<usStates.length;i++){
 
 //  < End Dropdown Picker Menu
 
+function getMapApi () {
+    varRequestMap = tes
+}
 
 
 function statePark(e) {
@@ -106,10 +110,6 @@ function searchApi(state) {
         })
 
 }
-
-
-
-
 
 
 

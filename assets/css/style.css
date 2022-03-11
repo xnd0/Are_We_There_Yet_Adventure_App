@@ -93,6 +93,12 @@ nav ul li a{
     border-radius: 2rem;
 }
 
+#map {
+    height: 400px; 
+    width: 600px;
+}
+
+
 .card{
  margin-top: 15rem;
  bottom: 2rem;
