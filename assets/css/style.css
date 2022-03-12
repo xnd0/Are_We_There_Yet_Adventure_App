@@ -12,7 +12,7 @@ html:not(embeded){
 }
 body{
     list-style: none;
-    background: #444;
+    background: #0a1016;
     color: #fff;
     height: 92vh;
 }
@@ -229,12 +229,27 @@ width: 10px;
 }
 
 .fav-hero ul li {
-border: 1px solid orange;
-padding: .8rem;
-margin-top: .6rem;
-display: flex;
-justify-content: center;
-align-items: center;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color:  #0a1016;
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+.clear-button {
+    position: absolute;
+    bottom: 10rem;
+    right: 6rem;
+}
+#reset{
+    padding: 1.4rem;
+    font-size: 1.2rem;
+    color: var(--w);
+    background: #0a1016;
+    cursor: pointer;
+
 }
 
 
