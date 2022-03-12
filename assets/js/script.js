@@ -6,6 +6,7 @@
 const searchBtn = document.querySelector('.search-btn');
 const resultContentEl = document.querySelector('#result-content');
 const saveList = document.querySelector('#saveList');
+const clearBtn = document.querySelector('#reset')
 
 
 // Dropdown Picker Menu  >
