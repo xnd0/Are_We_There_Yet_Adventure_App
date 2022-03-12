@@ -12,3 +12,12 @@ function showAddedFavorites() {
     }
 }
 showAddedFavorites();
+
+// clear button to clear the local storage 
+clearBtn.addEventListener('click', clearStorage);
+
+function clearStorage() {
+    localStorage.clear();
+    location.reload();
+}
+clearStorage();
