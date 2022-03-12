@@ -249,23 +249,21 @@ function renderResults(parkList) {
 
 }
 
-var favoriteLocations = [];
+resultContentEl.addEventListener('click', function (e) {
+    e.preventDefault();
 
+    let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
 
-resultContentEl.addEventListener('click',function(event){
-    console.log(event.target)
+    let selecteditems = {
+        savedInfo: e.target.getAttribute("data-location")
+    }
 
-    var favLocation = event.target.getAttribute("data-location");
-    console.log(favLocation)
+    favLocation.push(selecteditems);
+    console.log(favLocation);
 
-    favoriteLocations.push(favLocation)
-
-    console.log("log this: " + favoriteLocations);
-
-    localStorage.setItem("myPlaces", JSON.stringify(favoriteLocations));
+    localStorage.setItem("favLocation", JSON.stringify(favLocation));
 
 })
-
 
 
 
