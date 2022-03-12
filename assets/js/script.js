@@ -9,7 +9,7 @@ const saveList = document.querySelector('#saveList');
 const clearBtn = document.querySelector('#reset')
 
 
-// Dropdown Picker Menu  >
+//-----Dropdown Picker Menu-----//
 var usStates = [
     { name: 'ALABAMA', abbreviation: 'AL' },
     { name: 'ALASKA', abbreviation: 'AK' },
@@ -71,7 +71,7 @@ var usStates = [
     { name: 'WISCONSIN', abbreviation: 'WI' },
     { name: 'WYOMING', abbreviation: 'WY' }
 ];
-
+//----for loop to bring up the results by state----//
 for (var i = 0; i < usStates.length; i++) {
     var option = document.createElement("option");
     option.text = usStates[i].name + ' [' + usStates[i].abbreviation + ']';
@@ -79,16 +79,12 @@ for (var i = 0; i < usStates.length; i++) {
     var select = document.getElementById("state");
     select.appendChild(option);
 }
-
-//  < End Dropdown Picker Menu
-
-
-// search button 
+//-----End Dropdown Picker Menu------//
+//-----Search Button-----// 
 searchBtn.addEventListener('click', statePark);
-
+//--Start of Function to search park by state--//
 function statePark(e) {
     e.preventDefault();
-
 
     var searchInputVal = document.querySelector('#state').value;
     console.log(searchInputVal)
@@ -96,34 +92,29 @@ function statePark(e) {
         console.error('You need to search for a city!')
         return;
     }
-
     searchApi(searchInputVal);
-
 }
-
+//----End of state search function----//
+//--Start of function to Search each park by state using API--//
 function searchApi(stateVal) {
     var apiUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateVal}&api_key=EVbj21l5TvXpId2wduNH8JdzY1kYN849zHPznIgn`
-
+    //----Fetching API using .json()----//
     fetch(apiUrl).then(res => res.json())
         .then(res => {
-            // console.log(renderResults);
+            //console.log(renderResults);
             console.log(res.data)
-
+            //--For loop to render the results--//
             for (let i = 0; i < res.data.length; i++) {
                 // console.log(res.data[i])
                 renderResults(res.data[i])
-
-
             }
         })
-
         .catch(function (error) {
             console.error(error);
         });
-
 }
-
-// -----Map Section ---------->
+//----End of API state search function----// 
+//-------<< Map Section >>--------//
 
 // default/starter map location
 // var map = L.map('map').setView([51.505, -0.09], 13);
@@ -189,12 +180,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoieG5kY21kIiwiYSI6ImNsMGxvdnF4aTB5OWMzYmw0bzRxZWEwaDQifQ.0OevUWqcsyWAe5gbtCUPvQ'
 }).addTo(map);
 
-// <------------------------- End Map Section
+//-------<< End of Map Section >>--------//
 
 
 
 
-
+//-----Start of Display On Card(s) function-----//
 function renderResults(parkList) {
 
     // console.log(parkList);
@@ -246,16 +237,14 @@ function renderResults(parkList) {
     // map display section
     var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
     marker.bindPopup(parkList.fullName + "<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
-
-
-
 }
-
+//-----End of Display Card function-----//
+//-----Clicker for searching results-----//
 resultContentEl.addEventListener('click', function (e) {
     e.preventDefault();
-
+    //---Adding to favorites---//
     let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
-
+    //---saving info to favorites---//
     let selecteditems = {
         savedInfo: e.target.getAttribute("data-location")
     }
@@ -266,7 +255,7 @@ resultContentEl.addEventListener('click', function (e) {
     localStorage.setItem("favLocation", JSON.stringify(favLocation));
 
 })
-
+//------End of Clicker function------//
 
 
 

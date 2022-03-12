@@ -1,3 +1,9 @@
+// --------------------------------- \\
+// -------- Javascript Page -------- \\
+// -------- For user to save ------- \\
+// ------------ places ------------- \\
+// --------------------------------- \\
+
 function showAddedFavorites() {
     var favoriteList = JSON.parse(localStorage.getItem("favLocation"));
     console.log(favoriteList)
