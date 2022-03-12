@@ -27,6 +27,9 @@ hr{
     --tiny: #b54507;
 
 }
+li{
+    list-style: none;
+}
 header{
     display: flex;
     justify-content: space-between;
@@ -212,6 +215,27 @@ width: 10px;
     display: block;
 }
 
+/* favLocations HTML  */
+.container{
+    padding-top: 1rem;
+    text-align: center;
+    color: #0a1016;
+    margin: 2rem;
+    height: 80vh;
+    background-color:white;
+    opacity: .8;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px 2px;
+}
+
+.fav-hero ul li {
+border: 1px solid orange;
+padding: .8rem;
+margin-top: .6rem;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 
 

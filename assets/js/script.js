@@ -5,6 +5,7 @@
 
 const searchBtn = document.querySelector('.search-btn');
 const resultContentEl = document.querySelector('#result-content');
+const saveList = document.querySelector('#saveList');
 
 
 // Dropdown Picker Menu  >
@@ -163,7 +164,7 @@ var marker = L.marker([51.5, -0.09]).addTo(map);
 //     .setContent("Hello, Welcome to the Map, A-Team! I am a standalone popup. WHOOOOPAHH")
 //     .openOn(map);
 
-    
+
 // // click anywhere on map for the popup
 //     var popup = L.popup();
 
@@ -243,7 +244,7 @@ function renderResults(parkList) {
 
     // map display section
     var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
-    marker.bindPopup(parkList.fullName +"<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
+    marker.bindPopup(parkList.fullName + "<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
 
 
 
