@@ -216,7 +216,7 @@ width: 10px;
 }
 
 /* favLocations HTML  */
-.container{
+.container1{
     padding-top: 1rem;
     text-align: center;
     color: #0a1016;
@@ -225,7 +225,7 @@ width: 10px;
     background-color:white;
     opacity: .8;
     font-size: 1.3rem;
-    box-shadow: 0 0 10px 2px;
+    box-shadow: rgb(255, 166, 0) 0 0 10px 2px;
 }
 
 .fav-hero ul li {
@@ -233,7 +233,7 @@ width: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px;
-    background-color:  #0a1016;
+    background-color:  rgb(255, 166, 0);
     color: white;
     font-size: 1.2em;
     line-height: 1.5;
@@ -249,7 +249,9 @@ width: 10px;
     color: var(--w);
     background: #0a1016;
     cursor: pointer;
-
+}
+#reset:hover{
+    box-shadow: rgb(255, 166, 0) 0 0 10px 2px;
 }
 
 
