@@ -118,7 +118,6 @@ function searchApi(stateVal) {
 //-----End of "NPS" API-----//
 
 //----Start of function to list details for parks---//
-=======
 // -----Map Section ---------->
 
 // default/starter map location
@@ -220,15 +219,6 @@ function renderResults(parkList) {
 
     var bodyContentEl = document.createElement('p');
 
-=======
-//----Phone number of park----//
-    var parkNumber = document.createElement('p');
-    parkNumber.innerHTML +=
-        '<strong>Park Number: </strong> ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
-//----Cost of entry fee to park----//
-    var parkCost = document.createElement('p');
-    parkCost.innerHTML +=
-        '<strong>Park Cost: </strong>' + parkList.entranceFees[0].cost + '<br/>'
 //----Breif park description----//
 
     if (parkList.description) {
@@ -245,14 +235,12 @@ function renderResults(parkList) {
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
 
-//----appending all the attributes to page tab----//
-    resultBody.append(titleEl, parkNumber, parkCost, bodyContentEl, linkButtonEl);
-//---appending result card----//
 
     var linkSaveButton = document.createElement('b');
     linkSaveButton.textContent = 'Save to Favorites';
     linkSaveButton.setAttribute('data-location', parkList.fullName);
     linkSaveButton.classList.add('btn', 'fav-btn', 'btn-dark');
+
 
     resultBody.append(titleEl, cityContentEl, phoneContentEl, bodyContentEl, linkButtonEl, linkSaveButton);
 
