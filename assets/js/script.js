@@ -5,6 +5,8 @@
 
 const searchBtn = document.querySelector('.search-btn');
 const resultContentEl = document.querySelector('#result-content');
+const saveList = document.querySelector('#saveList');
+const clearBtn = document.querySelector('#reset')
 
 
 //----Dropdown Picker Menu----//
@@ -116,6 +118,79 @@ function searchApi(stateVal) {
 //-----End of "NPS" API-----//
 
 //----Start of function to list details for parks---//
+=======
+// -----Map Section ---------->
+
+// default/starter map location
+// var map = L.map('map').setView([51.505, -0.09], 13);
+
+// Los Angeles Latitude + Longitude
+var map = L.map('map').setView([34.052, -118.244], 13);
+
+
+// add marker on map
+var marker = L.marker([51.5, -0.09]).addTo(map);
+
+
+// // add a sized circle to map
+// var circle = L.circle([51.508, -0.11], {
+//     color: 'red',
+//     fillColor: '#f03',
+//     fillOpacity: 0.5,
+//     radius: 500
+// }).addTo(map);
+
+
+// // add a polygon to map
+// var polygon = L.polygon([
+//     [51.509, -0.08],
+//     [51.503, -0.06],
+//     [51.51, -0.047]
+// ]).addTo(map);
+
+
+// // add pop-ups to the map object, displaying text when you click the defined object.
+// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+// circle.bindPopup("I am a circle.");
+// polygon.bindPopup("I am a polygon.");
+
+
+// // for adding more layers (extra info to popups than just text, loads on refresh)
+// var popup = L.popup()
+//     .setLatLng([51.513, -0.09])
+//     .setContent("Hello, Welcome to the Map, A-Team! I am a standalone popup. WHOOOOPAHH")
+//     .openOn(map);
+
+
+// // click anywhere on map for the popup
+//     var popup = L.popup();
+
+// function onMapClick(e) {
+//     popup
+//         .setLatLng(e.latlng)
+//         .setContent("You clicked the map at " + e.latlng.toString())
+//         .openOn(map);
+// }
+// map.on('click', onMapClick);
+
+
+// Connects to MapBox tile
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    // id: 'mapbox/satellite-v9',
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoieG5kY21kIiwiYSI6ImNsMGxvdnF4aTB5OWMzYmw0bzRxZWEwaDQifQ.0OevUWqcsyWAe5gbtCUPvQ'
+}).addTo(map);
+
+// <------------------------- End Map Section
+
+
+
+
+
 function renderResults(parkList) {
 
     // console.log(parkList);
@@ -155,14 +230,42 @@ function renderResults(parkList) {
     linkButtonEl.setAttribute('href', parkList.url);
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
+
 //----appending all the attributes to page tab----//
     resultBody.append(titleEl, parkNumber, parkCost, bodyContentEl, linkButtonEl);
 //---appending result card----//
+
+    var linkSaveButton = document.createElement('b');
+    linkSaveButton.textContent = 'Save to Favorites'
+    linkSaveButton.setAttribute('data-location', parkList.fullName);
+    linkSaveButton.classList.add('btn', 'btn-dark');
+
+    resultBody.append(titleEl, bodyContentEl, linkButtonEl, linkSaveButton);
+
+  
     resultContentEl.append(resultCard);
+
+    // map display section
+    var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
+    marker.bindPopup(parkList.fullName + "<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
 
 
 }
 
+resultContentEl.addEventListener('click', function (e) {
+
+    let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
+
+    let selecteditems = {
+        savedInfo: e.target.getAttribute("data-location")
+    }
+
+    favLocation.push(selecteditems);
+    console.log(favLocation);
+
+    localStorage.setItem("favLocation", JSON.stringify(favLocation));
+
+})
 
 
 
