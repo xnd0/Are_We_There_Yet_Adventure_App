@@ -3,7 +3,7 @@
 <Top of page>
   
   <Top Header>
-Title: "Are we there yet?"
+Title: Are We There Yet
   
    <Tab1> "Home"
       This tab will bring the user back to the home first page.
@@ -21,14 +21,13 @@ Title: "Are we there yet?"
   <<End of Header>>
 
   
-
-REPO Link:
-https://github.com/xnd0/Are_We_There_Yet_Adventure_App/
-<br>
 LIVE Link:
 https://xnd0.github.io/Are_We_There_Yet_Adventure_App/
+<br>
+REPO Link:
+https://github.com/xnd0/Are_We_There_Yet_Adventure_App/
 
 
-Screenshots:
+Screenshot:
 ![Landing Page](Landing_Page.png)
 
