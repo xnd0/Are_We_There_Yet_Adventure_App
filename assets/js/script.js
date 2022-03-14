@@ -124,7 +124,7 @@ function searchApi(stateVal) {
 // var map = L.map('map').setView([51.505, -0.09], 13);
 
 // Los Angeles Latitude + Longitude
-var map = L.map('map').setView([34.052, -118.244], 13);
+var map = L.map('map').setView([34.052, -118.244], 5);
 
 
 // add marker on map
