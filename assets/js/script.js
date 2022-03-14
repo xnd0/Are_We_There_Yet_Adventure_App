@@ -208,6 +208,19 @@ function renderResults(parkList) {
 //----Name of park----//
     var titleEl = document.createElement('h2');
     titleEl.textContent = parkList.fullName;
+
+
+    var cityContentEl = document.createElement('p');
+    cityContentEl.innerHTML =
+        '<strong>City</strong> ' + ' ' + parkList.addresses[0].city + '<br/>';
+
+    var phoneContentEl = document.createElement('p');
+    phoneContentEl.innerHTML =
+        '<strong>Phone Number</strong> ' + ' ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
+
+    var bodyContentEl = document.createElement('p');
+
+=======
 //----Phone number of park----//
     var parkNumber = document.createElement('p');
     parkNumber.innerHTML +=
@@ -217,6 +230,7 @@ function renderResults(parkList) {
     parkCost.innerHTML +=
         '<strong>Park Cost: </strong>' + parkList.entranceFees[0].cost + '<br/>'
 //----Breif park description----//
+
     if (parkList.description) {
         bodyContentEl.innerHTML +=
             '<strong>Description:</strong> ' + parkList.description;
@@ -236,11 +250,11 @@ function renderResults(parkList) {
 //---appending result card----//
 
     var linkSaveButton = document.createElement('b');
-    linkSaveButton.textContent = 'Save to Favorites'
+    linkSaveButton.textContent = 'Save to Favorites';
     linkSaveButton.setAttribute('data-location', parkList.fullName);
-    linkSaveButton.classList.add('btn', 'btn-dark');
+    linkSaveButton.classList.add('btn', 'fav-btn', 'btn-dark');
 
-    resultBody.append(titleEl, bodyContentEl, linkButtonEl, linkSaveButton);
+    resultBody.append(titleEl, cityContentEl, phoneContentEl, bodyContentEl, linkButtonEl, linkSaveButton);
 
   
     resultContentEl.append(resultCard);
@@ -252,18 +266,22 @@ function renderResults(parkList) {
 
 }
 
-resultContentEl.addEventListener('click', function (e) {
+resultContentEl.addEventListener('click', function (event) {
+    if (event.target.matches(".fav-btn")) {
 
-    let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
 
-    let selecteditems = {
-        savedInfo: e.target.getAttribute("data-location")
+        let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
+
+        let selecteditems = {
+            savedInfo: event.target.getAttribute("data-location")
+        }
+
+        favLocation.push(selecteditems);
+
+        localStorage.setItem("favLocation", JSON.stringify(favLocation));
     }
 
-    favLocation.push(selecteditems);
-    console.log(favLocation);
 
-    localStorage.setItem("favLocation", JSON.stringify(favLocation));
 
 })
 
