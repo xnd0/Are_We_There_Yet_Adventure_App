@@ -26,3 +26,8 @@ REPO Link:
 https://github.com/xnd0/Are_We_There_Yet_Adventure_App/
 LIVE Link:
 https://xnd0.github.io/Are_We_There_Yet_Adventure_App/
+
+
+Screenshots:
+![Landing Page](Landing_Page.png)
+
