@@ -254,7 +254,7 @@ function renderResults(parkList) {
 
     // map display section
     var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
-    marker.bindPopup(parkList.fullName + "<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
+    marker.bindPopup(parkList.fullName).openPopup();
 
 
 }

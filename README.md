@@ -1,14 +1,14 @@
 # Are_We_There_Yet_Adventure_App
 
-<<Top of page>>
+<Top of page>
   
-  <<Top Header>>
-Title: "Are we there yet?"
+  <Top Header>
+Title: Are We There Yet
   
-   <<Tab1>> "Home"
+   <Tab1> "Home"
       This tab will bring the user back to the home first page.
   
-   <<Tab2>> "My Favorite Places"
+   <Tab2> "My Favorite Places"
       Seperate window with all parks saved to local storage by user. "Favorite Locations:" with title on top.
       On the bottom right corner has a button "Clear List" that clears the user's favorite places.
   
@@ -21,8 +21,13 @@ Title: "Are we there yet?"
   <<End of Header>>
 
   
-
-REPO Link:
-https://github.com/xnd0/Are_We_There_Yet_Adventure_App/
 LIVE Link:
 https://xnd0.github.io/Are_We_There_Yet_Adventure_App/
+<br>
+REPO Link:
+https://github.com/xnd0/Are_We_There_Yet_Adventure_App/
+
+
+Screenshot:
+![Landing Page](Landing_Page.png)
+
