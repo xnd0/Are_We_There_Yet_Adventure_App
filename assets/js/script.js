@@ -159,11 +159,11 @@ function renderResults(parkList) {
     var titleEl = document.createElement('h2');
     titleEl.textContent = parkList.fullName;
 
-
+    //----City where Park is in----//
     var cityContentEl = document.createElement('p');
     cityContentEl.innerHTML =
         '<strong>City:</strong> ' + ' ' + parkList.addresses[0].city + '<br/>';
-
+    //----Park's Phone number----//
     var phoneContentEl = document.createElement('p');
     phoneContentEl.innerHTML =
         '<strong>Phone Number:</strong> ' + ' ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
@@ -182,34 +182,32 @@ function renderResults(parkList) {
             '<strong>Description:</strong> ' + parkList.description;
     } else {
         bodyContentEl.innerHTML +=
-            '<strong>Description:</strong>  No description for this entry.';
+            '<strong>Description:</strong>  No description for this park.';
     }
-
+//-----Button Attribute for READ MORE-----//
     var linkButtonEl = document.createElement('a');
     linkButtonEl.textContent = 'Read More';
     linkButtonEl.setAttribute('href', parkList.url);
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
 
-
+//-----Button Attribute for SAVE TO FAVORITES-----//
     var linkSaveButton = document.createElement('b');
     linkSaveButton.textContent = 'Save to Favorites';
     linkSaveButton.setAttribute('data-location', parkList.fullName);
     linkSaveButton.classList.add('btn', 'fav-btn', 'btn-dark');
 
-
+//-----Displaying all attributes for park using append-----//
     resultBody.append(titleEl, cityContentEl, phoneContentEl, parkCost, bodyContentEl, linkButtonEl, linkSaveButton);
 
-  
     resultContentEl.append(resultCard);
 
     // map display section
     var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
     marker.bindPopup(parkList.fullName).openPopup();
 
-
 }
-
+//----Button attributes for the fav button----//
 resultContentEl.addEventListener('click', function (event) {
     if (event.target.matches(".fav-btn")) {
 
