@@ -211,11 +211,16 @@ function renderResults(parkList) {
 
     var cityContentEl = document.createElement('p');
     cityContentEl.innerHTML =
-        '<strong>City</strong> ' + ' ' + parkList.addresses[0].city + '<br/>';
+        '<strong>City:</strong> ' + ' ' + parkList.addresses[0].city + '<br/>';
 
     var phoneContentEl = document.createElement('p');
     phoneContentEl.innerHTML =
-        '<strong>Phone Number</strong> ' + ' ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
+        '<strong>Phone Number:</strong> ' + ' ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
+    
+     //----Cost of entry fee to park----//
+    var parkCost = document.createElement('p');
+    parkCost.innerHTML +=
+        '<strong>Park Cost: </strong>' + parkList.entranceFees[0].cost + '<br/>'  
 
     var bodyContentEl = document.createElement('p');
 
@@ -242,7 +247,7 @@ function renderResults(parkList) {
     linkSaveButton.classList.add('btn', 'fav-btn', 'btn-dark');
 
 
-    resultBody.append(titleEl, cityContentEl, phoneContentEl, bodyContentEl, linkButtonEl, linkSaveButton);
+    resultBody.append(titleEl, cityContentEl, phoneContentEl, parkCost, bodyContentEl, linkButtonEl, linkSaveButton);
 
   
     resultContentEl.append(resultCard);
