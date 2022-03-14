@@ -2,6 +2,8 @@ const form = document.querySelector("#task-form");
 const taskInput = document.querySelector("#task-input");
 const taskList = document.querySelector("#tasks");
 const submitBtn = document.querySelector('#submit');
+const resetBtn = document.querySelector('.reset-btn')
+
 let tasksAdded = [];
 
 function rendertasks() {
@@ -35,14 +37,9 @@ function rendertasks() {
         taskDelete.innerHTML = 'delete';
 
 
-        actionBtn.appendChild(taskDelete);
+        // actionBtn.appendChild(taskDelete);
         taskEl.appendChild(actionBtn);
         taskList.appendChild(taskEl);
-
-
-        taskDelete.addEventListener('click', function () {
-            taskList.removeChild(taskEl);
-        })
 
         taskInput.value = "";
 
@@ -75,3 +72,9 @@ function displaytasks() {
 
 }
 displaytasks();
+
+resetBtn.addEventListener('click', clearStorage2)
+
+function clearStorage2() {
+    localStorage.clear();
+}
