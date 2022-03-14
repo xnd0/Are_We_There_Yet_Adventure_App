@@ -25,6 +25,8 @@ hr{
     --r: red;
     --teen: #d65100;
     --tiny: #b54507;
+    --gold: #ec9f05;
+
 
 }
 li{
@@ -72,7 +74,7 @@ nav ul li a:hover{
 }
 .main{
     width: 100%;
-    /* this lopps thru a random pic every time the brower gets refreshed */
+    /* this loops thru a random pic every time the brower gets refreshed */
     /* background: url(https://source.unsplash.com/2200x1100/?dark); */ 
     background-image: url(https://images.unsplash.com/photo-1460355976672-71c3f0a4bdac?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1100&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGFya3x8fHx8fDE2NDY5NzE5MTg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=2200);
     min-height: 100%;
@@ -254,7 +256,91 @@ width: 10px;
     box-shadow: rgb(255, 166, 0) 0 0 10px 2px;
 }
 
+/* To-do list html page  */
 
+#task-form{
+    display: flex;
+}
+
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+button {
+    color: var(--w);
+    background-color: #ff4e00;
+    background-image: linear-gradient(315deg, #312e2d 0%, #031e42 74%);
+    
+}
+
+#task-input{
+    flex: 1 1 0%;
+    background-color: #424d57;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    color: var(--w);
+    font-size: 1.25rem;   
+}
+
+#task-submit{
+    color: orange;
+    margin-right: 1rem;
+}
+
+main{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+#task-list{
+    padding: 1rem;
+}
+#task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--w);
+    margin-bottom: 1rem;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    background-color: #424d57;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.task .content-task{
+    flex: 1 1 0%;
+}
+.task .content-task .text{
+    color: var(--w);
+    font-size: 1.1rem;
+    width: 100%;
+    display: block;
+}
+
+.action-btn button{
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: none;
+    outline: none;
+}
+#task-form button{
+    padding: .5rem;
+    margin-right: 2rem;
+    outline: none;
+    cursor: pointer;
+    border-radius: 1.7rem;
+}
+
+.card-to-do h1 {
+    text-align: center;
+}
 
 
 
