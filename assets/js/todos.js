@@ -77,4 +77,5 @@ resetBtn.addEventListener('click', clearStorage2)
 
 function clearStorage2() {
     localStorage.clear();
+    location.reload();
 }
