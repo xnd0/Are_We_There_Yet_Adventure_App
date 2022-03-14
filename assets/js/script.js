@@ -252,7 +252,6 @@ function renderResults(parkList) {
 }
 
 resultContentEl.addEventListener('click', function (e) {
-    e.preventDefault();
 
     let favLocation = JSON.parse(localStorage.getItem("favLocation")) || [];
 
