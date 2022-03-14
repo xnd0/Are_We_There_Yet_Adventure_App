@@ -9,7 +9,7 @@ const saveList = document.querySelector('#saveList');
 const clearBtn = document.querySelector('#reset')
 
 
-// Dropdown Picker Menu  >
+//----Dropdown Picker Menu----//
 var usStates = [
     { name: 'ALABAMA', abbreviation: 'AL' },
     { name: 'ALASKA', abbreviation: 'AK' },
@@ -71,7 +71,7 @@ var usStates = [
     { name: 'WISCONSIN', abbreviation: 'WI' },
     { name: 'WYOMING', abbreviation: 'WY' }
 ];
-
+//----for loop so it can display all the options for that state----//
 for (var i = 0; i < usStates.length; i++) {
     var option = document.createElement("option");
     option.text = usStates[i].name + ' [' + usStates[i].abbreviation + ']';
@@ -79,16 +79,13 @@ for (var i = 0; i < usStates.length; i++) {
     var select = document.getElementById("state");
     select.appendChild(option);
 }
+//----End of Dropdown Picker Menu----//
 
-//  < End Dropdown Picker Menu
-
-
-// search button 
+//----search button----//
 searchBtn.addEventListener('click', statePark);
 
 function statePark(e) {
     e.preventDefault();
-
 
     var searchInputVal = document.querySelector('#state').value;
     console.log(searchInputVal)
@@ -96,11 +93,11 @@ function statePark(e) {
         console.error('You need to search for a city!')
         return;
     }
-
     searchApi(searchInputVal);
-
 }
+//----End of search button----//
 
+//-----Displaying "NPS" API lists with all parks in State's location----//
 function searchApi(stateVal) {
     var apiUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${stateVal}&api_key=EVbj21l5TvXpId2wduNH8JdzY1kYN849zHPznIgn`
 
@@ -108,21 +105,20 @@ function searchApi(stateVal) {
         .then(res => {
             // console.log(renderResults);
             console.log(res.data)
-
+            //---for loop to display---//
             for (let i = 0; i < res.data.length; i++) {
                 // console.log(res.data[i])
                 renderResults(res.data[i])
-
-
             }
         })
-
         .catch(function (error) {
             console.error(error);
         });
-
 }
+//-----End of "NPS" API-----//
 
+//----Start of function to list details for parks---//
+=======
 // -----Map Section ---------->
 
 // default/starter map location
@@ -202,24 +198,25 @@ function renderResults(parkList) {
     // console.log(parkList[5].states);                                                                
     // console.log(parkList[5].contacts);
 
+//----created var to make object into elements---///
     var resultCard = document.createElement('div');
     resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
 
     var resultBody = document.createElement('div');
     resultBody.classList.add('card-body');
     resultCard.append(resultBody);
-
+//----Name of park----//
     var titleEl = document.createElement('h2');
     titleEl.textContent = parkList.fullName;
-
-    var bodyContentEl = document.createElement('p');
-    bodyContentEl.innerHTML =
-        '<strong>Latitude:</strong> ' + parkList.latitude + ' ' + '<strong>Longitude:</strong> ' + parkList.longitude + '<br/>';
-
-    // var bodyContentEl = document.createElement('p');
-    // bodyContentEl.innerHTML =
-    //     '<strong>longitude:</strong> ' + parkList[2].longitude + '<br/>';
-
+//----Phone number of park----//
+    var parkNumber = document.createElement('p');
+    parkNumber.innerHTML +=
+        '<strong>Park Number: </strong> ' + parkList.contacts.phoneNumbers[0].phoneNumber + '<br/>';
+//----Cost of entry fee to park----//
+    var parkCost = document.createElement('p');
+    parkCost.innerHTML +=
+        '<strong>Park Cost: </strong>' + parkList.entranceFees[0].cost + '<br/>'
+//----Breif park description----//
     if (parkList.description) {
         bodyContentEl.innerHTML +=
             '<strong>Description:</strong> ' + parkList.description;
@@ -234,6 +231,10 @@ function renderResults(parkList) {
     linkButtonEl.setAttribute('target', '_blank');
     linkButtonEl.classList.add('btn', 'btn-dark');
 
+//----appending all the attributes to page tab----//
+    resultBody.append(titleEl, parkNumber, parkCost, bodyContentEl, linkButtonEl);
+//---appending result card----//
+
     var linkSaveButton = document.createElement('b');
     linkSaveButton.textContent = 'Save to Favorites'
     linkSaveButton.setAttribute('data-location', parkList.fullName);
@@ -241,12 +242,12 @@ function renderResults(parkList) {
 
     resultBody.append(titleEl, bodyContentEl, linkButtonEl, linkSaveButton);
 
+  
     resultContentEl.append(resultCard);
 
     // map display section
     var marker = L.marker([parkList.latitude, parkList.longitude]).addTo(map);
     marker.bindPopup(parkList.fullName + "<br>-(add click function go to Card)<br>-(or save to favorites option)").openPopup();
-
 
 
 }
