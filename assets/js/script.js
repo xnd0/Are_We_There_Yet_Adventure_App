@@ -133,10 +133,6 @@ function renderResults(parkList) {
 //----Name of park----//
     var titleEl = document.createElement('h2');
     titleEl.textContent = parkList.fullName;
-//----Latitude and Longitude of park----//
-    var bodyContentEl = document.createElement('p');
-    bodyContentEl.innerHTML =
-        '<strong>Latitude:</strong> ' + parkList.latitude + ' ' + '<strong>Longitude:</strong> ' + parkList.longitude + '<br/>';
 //----Phone number of park----//
     var parkNumber = document.createElement('p');
     parkNumber.innerHTML +=
