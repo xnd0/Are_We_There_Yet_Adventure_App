@@ -241,6 +241,7 @@ function renderResults(parkList) {
     linkSaveButton.setAttribute('data-location', parkList.fullName);
     linkSaveButton.classList.add('btn', 'fav-btn', 'btn-dark');
 
+
     resultBody.append(titleEl, cityContentEl, phoneContentEl, bodyContentEl, linkButtonEl, linkSaveButton);
 
   
