@@ -120,8 +120,6 @@ function searchApi(stateVal) {
 //----Start of function to list details for parks---//
 // -----Map Section ---------->
 
-// default/starter map location
-// var map = L.map('map').setView([51.505, -0.09], 13);
 
 // Los Angeles Latitude + Longitude
 var map = L.map('map').setView([34.052, -118.244], 5);
@@ -130,47 +128,6 @@ var map = L.map('map').setView([34.052, -118.244], 5);
 // add marker on map
 var marker = L.marker([51.5, -0.09]).addTo(map);
 
-
-// // add a sized circle to map
-// var circle = L.circle([51.508, -0.11], {
-//     color: 'red',
-//     fillColor: '#f03',
-//     fillOpacity: 0.5,
-//     radius: 500
-// }).addTo(map);
-
-
-// // add a polygon to map
-// var polygon = L.polygon([
-//     [51.509, -0.08],
-//     [51.503, -0.06],
-//     [51.51, -0.047]
-// ]).addTo(map);
-
-
-// // add pop-ups to the map object, displaying text when you click the defined object.
-// marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-// circle.bindPopup("I am a circle.");
-// polygon.bindPopup("I am a polygon.");
-
-
-// // for adding more layers (extra info to popups than just text, loads on refresh)
-// var popup = L.popup()
-//     .setLatLng([51.513, -0.09])
-//     .setContent("Hello, Welcome to the Map, A-Team! I am a standalone popup. WHOOOOPAHH")
-//     .openOn(map);
-
-
-// // click anywhere on map for the popup
-//     var popup = L.popup();
-
-// function onMapClick(e) {
-//     popup
-//         .setLatLng(e.latlng)
-//         .setContent("You clicked the map at " + e.latlng.toString())
-//         .openOn(map);
-// }
-// map.on('click', onMapClick);
 
 
 // Connects to MapBox tile
@@ -188,14 +145,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 
-
-
 function renderResults(parkList) {
 
-    // console.log(parkList);
-    // console.log(parkList[5].description);
-    // console.log(parkList[5].states);                                                                
-    // console.log(parkList[5].contacts);
 
 //----created var to make object into elements---///
     var resultCard = document.createElement('div');
@@ -273,9 +224,6 @@ resultContentEl.addEventListener('click', function (event) {
 
         localStorage.setItem("favLocation", JSON.stringify(favLocation));
     }
-
-
-
 })
 
 
