@@ -11,8 +11,12 @@
 
     <script src="https://kit.fontawesome.com/f5f4ff2f36.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- leafletjs css link here -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
 
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Adventure App</title>
 </head>
 
@@ -22,8 +26,8 @@
         <nav>
             <ul>
                 <li> <a href="#">Home</a> </li>
-                <li> <a href="#">Parks</a> </li>
-                <li> <a href="#">Plan a trip</a> </li>
+                <li> <a href="./favlocations.html">My Favorite Places</a> </li>
+                <li> <a href="./todos.html">Plan a trip</a> </li>
             </ul>
         </nav>
     </header>
@@ -33,26 +37,26 @@
     <div class="main">
         <h2>Pack Your Bags!</h2>
         <blockquote>“The journey of a thousand miles begins with a single step.” <cite> - Lao Tzu.</cite></blockquote>
+        <h2>Search by State Here</i></h2>
         <form class="dropdown">
-            <h2>Search by State Here --></i></h2>
+            
             <select id="state" class="search-bar">
             </select>
             <button type="submit" class="search-btn btn">Search</button>
         </form>
     </div>
+
+    <!-- map section -->
+    <div class="center">-- User's Search Result Map --</div>
+    <h3>
+        <div id="map"></div>
+    </h3>
+    <div class="center">-- click on markers for info --</div>
+
+
+
     <div id="result-content"></div>
 
-
-
-    <!-- Original typing-input element -->
-    <!-- <div class="main">
-        <h2>Let's Find The Nearest Park</h2>
-        <form id="user-form" class="search-bar">
-            <input name="City" id="search-city" type="text" autofocus="true" placeholder="Search Parks By State" />
-            <button type="submit" class="btn">Search</button>
-        </form>
-
-    </div>  -->
 
     <!-- modal  -->
     <div class="park-details">
@@ -75,40 +79,12 @@
 
     <div id="result-content"></div>
 
-    <!-- Making 3 display cards -->
-    <!-- <div class="card-group">
-    <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div> -->
 
 
-
+    <!-- leafletjs map Javascript link here-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 
 
     <script src="./assets/js/script.js"></script>
