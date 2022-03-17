@@ -39,3 +39,12 @@ The "Save to Favorites" Button will save all the parks to the "My Favorite Place
 - [Github Link](https://github.com/xnd0/Are_We_There_Yet_Adventure_App/)
 - ## LIVE Link:</br>
 - [Are We There Yet](https://xnd0.github.io/Are_We_There_Yet_Adventure_App/)
+![Screenshot 2022-03-17 091041](https://user-images.githubusercontent.com/99533951/158845268-854e94e9-365e-4f99-bee2-2eb8e7b44445.png)
+![Screenshot 2022-03-17 091130](https://user-images.githubusercontent.com/99533951/158845302-590f7d06-cf85-4f4e-80e8-bd998da351db.png)
+![Screenshot 2022-03-17 091149](https://user-images.githubusercontent.com/99533951/158845383-808fec55-20b7-4dd5-9fb1-baf7201e2e31.png)
+![Screenshot 2022-03-17 091041](https://user-images.githubusercontent.com/99533951/158845405-6bf90423-dfa4-41ee-a6d6-7d403c9611de.png)
+![Screenshot 2022-03-17 091205](https://user-images.githubusercontent.com/99533951/158845442-1eb9ef1a-7674-4528-8f94-96f4d51e6069.png)
+
+
+
+
